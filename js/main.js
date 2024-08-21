@@ -26,7 +26,14 @@ console.log(sumOfBalances);
 
 // Task 2
 
-const hasFriendKiril = people.filter((person) => person.friends.includes("Kiril"));
+const hasFriendKiril = people.reduce((acc, person) => {
+  if (person.friends.includes("Kiril")) {
+    acc.push(person.name);
+  }
+
+  return acc;
+}, []);
+
 console.log(hasFriendKiril);
 
 // Task 3
